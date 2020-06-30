@@ -1,0 +1,42 @@
+<head>
+  <!-- Plotly.js -->
+   <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+
+<body>
+  <div id="myDiv" style="width: 480px; height: 400px;"><!-- Plotly chart will be drawn inside this DIV --></div>
+  <script>
+  trace1 = {
+  type: 'scatter',
+  x: [2, 4, 6, 8],
+  y: [10, 5, 10, 2],
+  mode: 'lines',
+  name: 'Cyan',
+  line: {
+    color: 'rgb(118, 215, 196)',
+    width: 3
+  }
+};
+
+trace2 = {
+  type: 'scatter',
+  x: [2, 4, 6, 8],
+  y: [15, 10, 6, 12],
+  mode: 'lines',
+  name: 'Purple',
+  line: {
+    color: 'rgb(125, 60, 152)',
+    width: 1
+  }
+};
+
+var layout = {
+  width: 500,
+  height: 500
+};
+
+var data = [trace1, trace2];
+
+Plotly.newPlot('myDiv', data, layout);
+  </script>
+</body>
