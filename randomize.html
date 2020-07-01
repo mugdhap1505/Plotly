@@ -1,0 +1,34 @@
+<head>
+  <script src="https://cdn.plot.ly/plotly-latest.min.js"></script>
+</head>
+<body>
+  <div id="graph"></div>
+  <button onclick="javascript:randomize();">Click to randomize </button>
+
+
+<script>
+
+Plotly.newPlot('graph', [{
+  x: [1, 2, 3],
+  y: [0, 0.5, 1],
+  line: {simplify: false},
+}], {}, {showSendToCloud:true});
+
+function randomize() {
+  Plotly.animate('graph', {
+    data: [{y: [Math.random(), Math.random(), Math.random()]}],
+    traces: [0],
+    layout: {}
+  }, {
+    transition: {
+      duration: 500,
+      easing: 'cubic-in-out'
+    },
+      frame: {
+          duration: 500
+      }
+  })
+}
+
+</script>
+</body>
